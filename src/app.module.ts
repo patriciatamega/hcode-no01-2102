@@ -1,3 +1,5 @@
+import { PaymentModule } from './payment/payment.module';
+import { AddressModule } from './address/address.module';
 import { TimeOptionModule } from './time-option/time-option.module';
 import { ContactModule } from './contact/contact.module';
 import { MailModule } from './mail/mail.module';
@@ -10,6 +12,8 @@ import { ServiceModule } from './service/service.module';
 
 @Module({
   imports: [
+    PaymentModule,
+    AddressModule,
     TimeOptionModule,
     ContactModule,
     MailModule,
@@ -21,4 +25,4 @@ import { ServiceModule } from './service/service.module';
   controllers: [AppController],
   providers: [],
 })
-export class AppModule { }
+export class AppModule {}

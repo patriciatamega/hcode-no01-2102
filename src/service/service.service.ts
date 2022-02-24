@@ -40,17 +40,17 @@ export class ServiceService {
 
   async create(data: CreateServiceDto) {
 
-    return this.prisma.services.create({
+    return this.prisma.service.create({
       data: this.isValidData(data),
     });
   }
 
   async findAll() {
-    return this.prisma.services.findMany();
+    return this.prisma.service.findMany();
   }
 
   async findOne(id: number) {
-    return this.prisma.services.findUnique({
+    return this.prisma.service.findUnique({
       where: {
         id: this.isValidId(id),
       },
@@ -59,7 +59,7 @@ export class ServiceService {
 
   async update(id: number, data: UpdateServiceDto) {
 
-    return this.prisma.services.update({
+    return this.prisma.service.update({
       where: {
         id: this.isValidId(id),
       },
@@ -73,7 +73,7 @@ export class ServiceService {
       throw new NotFoundException("ID not found");
     }
 
-    return this.prisma.services.delete({
+    return this.prisma.service.delete({
       where: {
         id: this.isValidId(id),
       },
